@@ -21,6 +21,7 @@ const Body = () => {
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1414233&lng=72.84855979999999&collection=83631&tags=layout_CCS_Pizza&sortBy=&filters=&type=rcv2&offset=0&page_type=null"
     );
+    console.log("🚀 ~ fetchData ~ data:", data);
     const json = await data.json();
     setListOfRestaurants(json?.data?.cards || []);
     setFilteredListOfRestaurants(json?.data?.cards || []);
